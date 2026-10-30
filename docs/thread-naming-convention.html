@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VidMedical / Upwork — Thread Naming Convention</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,700;1,9..40,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1f24;
+      --muted: #5c6670;
+      --line: #d8dee4;
+      --bg: #f7f5f1;
+      --card: #ffffff;
+      --accent: #0b6e6e;
+      --vm: #0b6e6e;
+      --uw: #8a4b1f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 0% 0%, #e7f0ee 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 100% 10%, #f3ebe3 0%, transparent 50%),
+        var(--bg);
+      font-family: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .eyebrow {
+      font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.5rem;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 0.6rem;
+    }
+
+    .lede {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    h2 {
+      font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 2rem 0 0.75rem;
+    }
+
+    p, li {
+      font-size: 1rem;
+    }
+
+    .paths {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .paths { grid-template-columns: 1fr 1fr; }
+    }
+
+    .path {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1rem 1.1rem 1.15rem;
+    }
+
+    .path.vm { border-top: 3px solid var(--vm); }
+    .path.uw { border-top: 3px solid var(--uw); }
+
+    .path h3 {
+      font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 1rem;
+      margin: 0 0 0.35rem;
+    }
+
+    .path .aka {
+      font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0 0 0.85rem;
+    }
+
+    .names {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .names li {
+      font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 0.92rem;
+      padding: 0.45rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .names li:first-child { border-top: 0; }
+
+    .names code {
+      font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .names .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-left: 0.35rem;
+    }
+
+    .names .note {
+      display: block;
+      font-weight: 500;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 0.15rem;
+    }
+
+    .rulebox, .when, .meta {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+    }
+
+    .rulebox strong {
+      font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+    }
+
+    ul.plain {
+      margin: 0.4rem 0 0;
+      padding-left: 1.15rem;
+    }
+
+    ul.plain li { margin: 0.35rem 0; }
+
+    .formula {
+      font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+      background: #eef3f2;
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0.75rem 0 0;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .print-hint {
+      font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0 0 1.25rem;
+    }
+
+    @media print {
+      body { background: white; }
+      .print-hint { display: none; }
+      .page { padding: 0; max-width: none; }
+      .path, .rulebox, .when, .meta { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <p class="print-hint">Reference doc — open in a browser, then Print → Save as PDF if you want a PDF copy.</p>
+
+    <header>
+      <p class="eyebrow">Cursor nerve centers</p>
+      <h1>Thread naming convention</h1>
+      <p class="lede">Two paths (VidMedical and Upwork). Same naming grammar. Open a thread only when you need that desk.</p>
+    </header>
+
+    <h2>Formula</h2>
+    <div class="meta">
+      <p style="margin:0">Path first, desk second. Optional client or channel later.</p>
+      <p class="formula">[Path] - [Desk]<br />[Path] - [ClientName]<br />[Path] - [Channel] &nbsp;<span style="font-weight:500;color:#5c6670">(only if it earns its own desk)</span></p>
+    </div>
+
+    <h2>The two paths</h2>
+    <div class="paths">
+      <section class="path vm">
+        <h3>VidMedical</h3>
+        <p class="aka">Short: VM · Domain: vidmedical.com</p>
+        <ul class="names">
+          <li>
+            <code>VidMedical - Business</code>
+            <span class="tag">start here</span>
+            <span class="note">Studio strategy, site, offer, content, systems, hiring SOPs. This chat.</span>
+          </li>
+          <li>
+            <code>VidMedical - Workplace</code>
+            <span class="tag">when needed</span>
+            <span class="note">Make the work: briefs, AE/C4D, revisions, delivery for VM retainers / template builds.</span>
+          </li>
+          <li>
+            <code>VidMedical - YouTube</code>
+            <span class="tag">later</span>
+            <span class="note">Only if YouTube becomes its own machine. Until then, keep content inside Business.</span>
+          </li>
+          <li>
+            <code>VidMedical - [Client]</code>
+            <span class="tag">later</span>
+            <span class="note">One thread per concurrent VM client when volume or confidentiality needs a split.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="path uw">
+        <h3>Upwork</h3>
+        <p class="aka">Short: UW · Freelance line</p>
+        <ul class="names">
+          <li>
+            <code>Upwork - Business</code>
+            <span class="tag">BD / intake</span>
+            <span class="note">Job search, proposals, profile, invites, scoping. Past proposal archive lives here.</span>
+          </li>
+          <li>
+            <code>Upwork - Workplace</code>
+            <span class="tag">production</span>
+            <span class="note">Active freelance delivery: briefs, AE/C4D, revisions, handoff.</span>
+          </li>
+          <li>
+            <code>Upwork - [Client]</code>
+            <span class="tag">later</span>
+            <span class="note">Split from Workplace when multiple clients run at once or NDAs demand isolation.</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <h2>What each desk is for</h2>
+    <div class="rulebox">
+      <ul class="plain">
+        <li><strong>Business</strong> — grow/run the line (offer, site, content, BD, systems). Does not open the project file.</li>
+        <li><strong>Workplace</strong> — make the work (briefs → AE/C4D → revisions → delivery). Does not write the homepage.</li>
+        <li><strong>Client thread</strong> — same as Workplace, scoped to one engagement.</li>
+      </ul>
+    </div>
+
+    <h2>Clarity rule</h2>
+    <div class="rulebox">
+      <p style="margin:0"><strong>Business never opens the project file; Workplace never writes the homepage.</strong> If a chat starts doing both, move the task or split the thread.</p>
+    </div>
+
+    <h2>When to open what</h2>
+    <div class="when">
+      <ul class="plain">
+        <li>Start with threads you need now — not the full map.</li>
+        <li>Early set that usually makes sense: <strong>VidMedical - Business</strong>, <strong>Upwork - Business</strong>, <strong>Upwork - Workplace</strong>.</li>
+        <li>Add <strong>VidMedical - Workplace</strong> when the first VM client (or serious production/SOP build) shows up.</li>
+        <li>Add YouTube / per-client threads only when concurrency or focus demands it.</li>
+        <li>New threads start fresh. Seed each with a short purpose + the artifacts for that desk only (not this whole history).</li>
+      </ul>
+    </div>
+
+    <h2>Metaphor (optional)</h2>
+    <div class="meta">
+      <p style="margin:0">One drive (you + Cursor). Separate folders so work doesn’t mix. Each folder can have “hands” (MCPs / tools) for what’s inside it — Upwork MCP on BD, AE/C4D on Workplace, light or none on Business.</p>
+    </div>
+
+    <footer>
+      Agreed in VidMedical - Business · Reference for Waqar · Print or Save as PDF from the browser when needed.
+    </footer>
+  </div>
+</body>
+</html>
