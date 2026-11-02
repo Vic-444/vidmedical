@@ -1,0 +1,46 @@
+---
+const pathname = Astro.url.pathname;
+const links = [
+  { href: '/packages', label: 'Packages' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="relative z-20 border-b border-ink/8 bg-paper/80 backdrop-blur-md">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:px-8">
+    <a href="/" class="group flex items-baseline gap-2 no-underline">
+      <span class="font-display text-xl font-semibold tracking-tight text-ink md:text-2xl">
+        VidMedical
+      </span>
+      <span class="hidden text-[0.65rem] font-medium uppercase tracking-[0.18em] text-muted sm:inline">
+        Studio
+      </span>
+    </a>
+
+    <nav class="flex items-center gap-1 sm:gap-2" aria-label="Primary">
+      {
+        links.map((link) => {
+          const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
+          return (
+            <a
+              href={link.href}
+              class:list={[
+                'rounded-md px-2.5 py-1.5 text-sm font-medium transition-colors no-underline sm:px-3',
+                active ? 'text-signal' : 'text-ink-soft hover:text-signal',
+              ]}
+            >
+              {link.label}
+            </a>
+          );
+        })
+      }
+      <a
+        href="/contact"
+        class="ml-1 hidden rounded-full bg-ink px-3.5 py-2 text-sm font-medium text-paper no-underline transition hover:bg-ink-soft sm:inline-flex"
+      >
+        Get started
+      </a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- Hero: one composition — brand first -->
+  <section class="relative isolate overflow-hidden bg-ink text-paper">
+    <div
+      class="hero-orb pointer-events-none absolute -left-24 top-[-20%] h-[28rem] w-[28rem] rounded-full bg-signal/25 blur-3xl"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="hero-orb pointer-events-none absolute -right-16 bottom-[-30%] h-[26rem] w-[26rem] rounded-full bg-amber-line/20 blur-3xl [animation-delay:-4s]"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.18]"
+      style="background-image: linear-gradient(rgba(251,252,252,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(251,252,252,0.07) 1px, transparent 1px); background-size: 48px 48px;"
+      aria-hidden="true"
+    >
+    </div>
+
+    <div class="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-5 py-20 md:px-8 md:py-28">
+      <p class="animate-rise font-sans text-xs font-semibold uppercase tracking-[0.22em] text-signal-bright">
+        VidMedical
+      </p>
+      <h1
+        class="animate-rise-delay-1 mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-tight text-paper sm:text-5xl md:text-6xl lg:text-[4.15rem]"
+      >
+        Medical explainer videos for practices that post.
+      </h1>
+      <p class="animate-rise-delay-2 mt-6 max-w-xl text-base leading-relaxed text-fog/80 md:text-lg">
+        Short vertical explainers — animated or clinician-on-camera — made for doctors, dentists,
+        physios, coaches, and clinics. You get ready-to-post files. We stay on the craft.
+      </p>
+      <div class="animate-rise-delay-3 mt-10 flex flex-wrap items-center gap-4">
+        <a
+          href="/packages"
+          class="inline-flex rounded-full bg-signal px-6 py-3 text-sm font-semibold text-ink no-underline transition hover:bg-signal-bright"
+        >
+          See packages
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex rounded-full border border-paper/25 px-6 py-3 text-sm font-semibold text-paper no-underline transition hover:border-paper/50 hover:bg-paper/5"
+        >
+          Email the studio
+        </a>
+      </div>
+      <div class="signal-line mt-16 h-px max-w-xs bg-gradient-to-r from-signal-bright via-amber-line/80 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- What we make -->
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-signal">What we make</p>
+      <h2 class="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+        Substance shorts — not clinic vibes edits.
+      </h2>
+      <p class="mt-4 max-w-2xl text-muted leading-relaxed">
+        Procedure walkthroughs, biomechanics, treatment explainers, and patient-education style
+        clips built for Reels, Shorts, and TikTok. Mix simple edits and motion graphics in the same
+        month when you need both.
+      </p>
+
+      <div class="mt-14 grid gap-10 md:grid-cols-2">
+        <article class="border-t border-ink/10 pt-6">
+          <h3 class="font-display text-xl font-semibold text-ink">Animated explainers</h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted">
+            AE-led motion: anatomy callouts, process steps, clean medical visuals without putting
+            patients on camera.
+          </p>
+        </article>
+        <article class="border-t border-ink/10 pt-6">
+          <h3 class="font-display text-xl font-semibold text-ink">Clinician-on-camera</h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted">
+            You talk; we polish — captions, pacing, light graphics and overlays so education still
+            scrolls.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="bg-mist">
+    <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-signal">How it works</p>
+      <h2 class="mt-3 max-w-xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+        Simple pipeline. Email-led. No babysitting your feed.
+      </h2>
+      <ol class="mt-12 grid gap-8 md:grid-cols-3">
+        <li class="relative">
+          <span class="font-display text-4xl font-semibold text-signal/40">01</span>
+          <h3 class="mt-2 font-semibold text-ink">Brief by email</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">
+            Topics, assets, and brand basics. We stay async so clinic days stay clinic days.
+          </p>
+        </li>
+        <li>
+          <span class="font-display text-4xl font-semibold text-signal/40">02</span>
+          <h3 class="mt-2 font-semibold text-ink">We produce</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">
+            Templated systems for speed, clinical clarity for trust. Two revision rounds per video.
+          </p>
+        </li>
+        <li>
+          <span class="font-display text-4xl font-semibold text-signal/40">03</span>
+          <h3 class="mt-2 font-semibold text-ink">You post</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">
+            Ready-to-post files land with you (or your VA). We make the videos — you own the channel.
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-ink-soft text-paper">
+    <div class="mx-auto flex max-w-6xl flex-col items-start gap-6 px-5 py-20 md:flex-row md:items-center md:justify-between md:px-8 md:py-24">
+      <div class="max-w-xl">
+        <h2 class="font-display text-3xl font-semibold tracking-tight md:text-4xl">
+          Start with one video — or a monthly block.
+        </h2>
+        <p class="mt-4 text-sm leading-relaxed text-fog/75 md:text-base">
+          Build the mix that fits your practice. Prepaid via invoice. Cancel future months anytime
+          before the next billing date.
+        </p>
+      </div>
+      <a
+        href="/contact"
+        class="inline-flex shrink-0 rounded-full bg-signal px-6 py-3 text-sm font-semibold text-ink no-underline transition hover:bg-signal-bright"
+      >
+        Get started
+      </a>
+    </div>
+  </section>
+</Layout>
