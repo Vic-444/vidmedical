@@ -12,6 +12,8 @@ const {
   title = 'VidMedical — Medical explainer videos for health practices',
   description = 'Short medical and health explainer videos for social — animated or clinician-on-camera. Built for doctors, dentists, physios, coaches, and clinics.',
 } = Astro.props;
+
+const GA_MEASUREMENT_ID = 'G-1ZKJXMZMG1';
 ---
 
 <!doctype html>
@@ -26,6 +28,18 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <title>{title}</title>
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+    ></script>
+    <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID);
+    </script>
   </head>
   <body class="flex min-h-screen flex-col antialiased">
     <Header />

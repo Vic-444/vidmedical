@@ -13,7 +13,8 @@ Same basic framework as the prior DesiFit build:
 - **GitHub** for source
 - **Cloudflare Pages** for hosting (planned)
 - **Formsubmit.co** for the contact form → `hello@vidmedical.com`
-- **Google Workspace** for branded email / Drive / YouTube (planned)
+- **Google Workspace** for branded email (`hello@vidmedical.com`)
+- **Google Analytics 4** (`G-1ZKJXMZMG1`) + Search Console (in progress)
 
 ## Local development
 
