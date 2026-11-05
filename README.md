@@ -14,7 +14,8 @@ Same basic framework as the prior DesiFit build:
 - **Cloudflare Pages** for hosting (planned)
 - **Formsubmit.co** for the contact form → `hello@vidmedical.com`
 - **Google Workspace** for branded email (`hello@vidmedical.com`)
-- **Google Analytics 4** (`G-1ZKJXMZMG1`) + Search Console (in progress)
+- **Google Analytics 4** (`G-1ZKJXMZMG1`) + Search Console
+- **Sitemap** at `/sitemap-index.xml` (via `@astrojs/sitemap`)
 
 ## Local development
 
