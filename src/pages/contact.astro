@@ -43,14 +43,15 @@ const interestLabel = interestValue
       </div>
 
       <form
-        action="https://formsubmit.co/hello@vidmedical.com"
+        action="https://api.web3forms.com/submit"
         method="POST"
         class="border border-ink/10 bg-paper p-6 md:p-8"
       >
-        <input type="hidden" name="_subject" value="VidMedical — new inquiry" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="access_key" value="685d2384-6522-49e4-aa53-a06b709865d2" />
+        <input type="hidden" name="subject" value="VidMedical — new inquiry" />
+        <input type="hidden" name="from_name" value="VidMedical Studio" />
+        <input type="hidden" name="redirect" value="https://vidmedical.com/thanks" />
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
 
         <label class="block text-sm font-medium text-ink">
           Name

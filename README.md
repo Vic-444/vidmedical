@@ -12,7 +12,7 @@ Same basic framework as the prior DesiFit build:
 - **Astro** + **Tailwind CSS**
 - **GitHub** for source
 - **Cloudflare Pages** for hosting (planned)
-- **Formsubmit.co** for the contact form → `hello@vidmedical.com`
+- **Web3Forms** for the contact form → `hello@vidmedical.com` (Formsubmit retired after multi-day outage)
 - **Google Workspace** for branded email (`hello@vidmedical.com`)
 - **Google Analytics 4** (`G-1ZKJXMZMG1`) + Search Console
 - **Sitemap** at `/sitemap-index.xml` (via `@astrojs/sitemap`)
@@ -38,7 +38,8 @@ npm run preview
 | `/` | Brand homepage |
 | `/packages` | Single / Core (4) / Growth (8) anchors — interactive builder next |
 | `/about` | Studio brand (no personal founder page) |
-| `/contact` | Email intake via Formsubmit |
+| `/contact` | Email intake via Web3Forms |
+| `/thanks` | Post-submit confirmation |
 
 ## Notes
 
