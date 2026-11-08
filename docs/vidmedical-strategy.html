@@ -4,10 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VidMedical — Operating Strategy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <style>
+    @font-face {
+      font-family: "DM Sans";
+      font-style: normal;
+      font-weight: 400 700;
+      font-display: swap;
+      src: local("DM Sans"), local("Segoe UI"), local("Helvetica Neue"), local("Arial");
+    }
+    @font-face {
+      font-family: "Instrument Serif";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local("Instrument Serif"), local("Georgia"), local("Times New Roman");
+    }
     :root {
       --ink: #0c1210;
       --paper: #f3f0e8;
@@ -29,7 +40,7 @@
         radial-gradient(ellipse 80% 50% at 10% -10%, #d7ebe6 0%, transparent 55%),
         radial-gradient(ellipse 60% 40% at 100% 0%, #e8e0d0 0%, transparent 50%),
         var(--paper);
-      font-family: "DM Sans", system-ui, sans-serif;
+      font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
       font-optical-sizing: auto;
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
