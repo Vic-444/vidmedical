@@ -1,129 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const interest = Astro.url.searchParams.get('interest') ?? '';
-const interestValue =
-  interest === 'single'
-    ? 'Single video'
-    : interest === 'core'
-      ? 'Core monthly (4)'
-      : interest === 'growth'
-        ? 'Growth monthly (8)'
-        : '';
-const interestLabel = interestValue
-  ? interest === 'core'
-    ? 'Core monthly (4 videos)'
-    : interest === 'growth'
-      ? 'Growth monthly (8 videos)'
-      : interestValue
-  : '';
+const tier = Astro.url.searchParams.get('tier') ?? Astro.url.searchParams.get('interest') ?? '';
+const dest =
+  tier === 'essential' || tier === 'single'
+    ? '/?tier=essential#start'
+    : tier === 'advanced'
+      ? '/?tier=advanced#start'
+      : tier === 'core' || tier === 'growth' || tier === 'monthly'
+        ? '/?tier=monthly#start'
+        : '/#start';
 ---
 
-<Layout
-  title="Contact — VidMedical"
-  description="Email VidMedical to start a single explainer video or a monthly retainer for your practice."
->
+<Layout title="Contact — VidMedical" description="Start an order on the VidMedical homepage.">
   <section class="bg-mist">
-    <div class="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1fr_1.1fr] md:px-8 md:py-24">
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-signal">Contact</p>
-        <h1 class="mt-3 font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">
-          Tell us what you need.
-        </h1>
-        <p class="mt-5 max-w-md text-muted leading-relaxed">
-          We work by email. Share your practice type, whether you want animated explainers,
-          clinician-on-camera edits, or a mix — and roughly how many videos per month.
-        </p>
-        <p class="mt-8 text-sm text-ink-soft">
-          Or write directly:
-          <a href="mailto:hello@vidmedical.com" class="font-medium text-signal no-underline hover:text-ink">
-            hello@vidmedical.com
-          </a>
-        </p>
-      </div>
-
-      <form
-        action="https://api.web3forms.com/submit"
-        method="POST"
-        class="border border-ink/10 bg-paper p-6 md:p-8"
-      >
-        <input type="hidden" name="access_key" value="685d2384-6522-49e4-aa53-a06b709865d2" />
-        <input type="hidden" name="subject" value="VidMedical — new inquiry" />
-        <input type="hidden" name="from_name" value="VidMedical Studio" />
-        <input type="hidden" name="redirect" value="https://vidmedical.com/thanks" />
-        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
-
-        <label class="block text-sm font-medium text-ink">
-          Name
-          <input
-            required
-            type="text"
-            name="name"
-            class="mt-2 w-full border border-ink/15 bg-mist px-3 py-2.5 text-sm text-ink outline-none focus:border-signal"
-          />
-        </label>
-
-        <label class="mt-5 block text-sm font-medium text-ink">
-          Email
-          <input
-            required
-            type="email"
-            name="email"
-            class="mt-2 w-full border border-ink/15 bg-mist px-3 py-2.5 text-sm text-ink outline-none focus:border-signal"
-          />
-        </label>
-
-        <label class="mt-5 block text-sm font-medium text-ink">
-          Practice / role
-          <input
-            type="text"
-            name="practice"
-            placeholder="e.g. physio clinic, dental practice, coach"
-            class="mt-2 w-full border border-ink/15 bg-mist px-3 py-2.5 text-sm text-ink outline-none focus:border-signal"
-          />
-        </label>
-
-        <label class="mt-5 block text-sm font-medium text-ink">
-          Interest
-          <select
-            name="interest"
-            class="mt-2 w-full border border-ink/15 bg-mist px-3 py-2.5 text-sm text-ink outline-none focus:border-signal"
-          >
-            <option value="" disabled selected={!interestValue}>Select…</option>
-            <option value="Single video" selected={interestValue === 'Single video'}>
-              Single video
-            </option>
-            <option value="Core monthly (4)" selected={interestValue === 'Core monthly (4)'}>
-              Core monthly (4 videos)
-            </option>
-            <option value="Growth monthly (8)" selected={interestValue === 'Growth monthly (8)'}>
-              Growth monthly (8 videos)
-            </option>
-            <option value="Not sure yet">Not sure yet</option>
-          </select>
-        </label>
-
-        <label class="mt-5 block text-sm font-medium text-ink">
-          Message
-          <textarea
-            required
-            name="message"
-            rows="5"
-            placeholder="Topics, edit type (animated / on-camera / mix), timeline…"
-            class="mt-2 w-full resize-y border border-ink/15 bg-mist px-3 py-2.5 text-sm text-ink outline-none focus:border-signal"
-          >{interestLabel ? `Interested in: ${interestLabel}\n\n` : ''}</textarea>
-        </label>
-
-        <button
-          type="submit"
-          class="mt-7 w-full rounded-full bg-signal px-5 py-3 text-sm font-semibold text-ink transition hover:bg-signal-bright"
+    <div class="mx-auto max-w-2xl px-5 py-20 md:px-8 md:py-28">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-signal">Contact</p>
+      <h1 class="mt-3 font-display text-3xl font-semibold tracking-tight text-ink">
+        Start from the homepage.
+      </h1>
+      <p class="mt-4 text-muted leading-relaxed">
+        The inquiry form lives on the main page so pricing, process, and start stay together.
+      </p>
+      <p class="mt-8">
+        <a
+          href={dest}
+          class="inline-flex rounded-full bg-signal px-5 py-3 text-sm font-semibold text-ink no-underline transition hover:bg-signal-bright"
         >
-          Send message
-        </button>
-        <p class="mt-3 text-xs leading-relaxed text-muted">
-          By sending, you agree we may reply by email about your inquiry. No spam lists.
-        </p>
-      </form>
+          Go to start
+        </a>
+      </p>
     </div>
   </section>
+  <script is:inline define:vars={{ dest }}>
+    location.replace(dest);
+  </script>
 </Layout>

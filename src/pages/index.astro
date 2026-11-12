@@ -1,9 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const tier = Astro.url.searchParams.get('tier') ?? '';
+const tierValue =
+  tier === 'essential' ? 'Essential' : tier === 'advanced' ? 'Advanced' : tier === 'monthly' ? 'Monthly retainer' : '';
 ---
 
-<Layout>
-  <!-- Hero: one composition — brand first -->
+<Layout
+  title="VidMedical — Medical explainer videos for health practices"
+  description="Short-form medical videos for practices. Essential and Advanced tiers, clear process, email-led intake. Ready-to-post 9:16 files."
+>
+  <!-- Hero -->
   <section class="relative isolate overflow-hidden bg-ink text-paper">
     <div
       class="hero-orb pointer-events-none absolute -left-24 top-[-20%] h-[28rem] w-[28rem] rounded-full bg-signal/25 blur-3xl"
@@ -32,110 +39,384 @@ import Layout from '../layouts/Layout.astro';
         Medical explainer videos for practices that post.
       </h1>
       <p class="animate-rise-delay-2 mt-6 max-w-xl text-base leading-relaxed text-fog/80 md:text-lg">
-        Short vertical explainers — animated or clinician-on-camera — made for doctors, dentists,
-        physios, coaches, and clinics. You get ready-to-post files. We stay on the craft.
+        Short vertical explainers for doctors, dentists, physios, coaches, and clinics — polished
+        and ready to post. We stay on the craft; clinic days stay clinic days.
       </p>
       <div class="animate-rise-delay-3 mt-10 flex flex-wrap items-center gap-4">
         <a
-          href="/packages"
+          href="#pricing"
           class="inline-flex rounded-full bg-signal px-6 py-3 text-sm font-semibold text-ink no-underline transition hover:bg-signal-bright"
         >
-          See packages
+          See pricing
         </a>
         <a
-          href="/contact"
+          href="#start"
           class="inline-flex rounded-full border border-paper/25 px-6 py-3 text-sm font-semibold text-paper no-underline transition hover:border-paper/50 hover:bg-paper/5"
         >
-          Email the studio
+          Start an order
         </a>
       </div>
       <div class="signal-line mt-16 h-px max-w-xs bg-gradient-to-r from-signal-bright via-amber-line/80 to-transparent"></div>
     </div>
   </section>
 
-  <!-- What we make -->
-  <section class="bg-paper">
+  <!-- What we do -->
+  <section class="bg-paper" id="offer">
     <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
-      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-signal">What we make</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-signal">What we do</p>
       <h2 class="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
         Substance shorts — not clinic vibes edits.
       </h2>
       <p class="mt-4 max-w-2xl text-muted leading-relaxed">
-        Procedure walkthroughs, biomechanics, treatment explainers, and patient-education style
-        clips built for Reels, Shorts, and TikTok. Mix simple edits and motion graphics in the same
-        month when you need both.
+        Procedure walkthroughs, biomechanics, treatment explainers, and patient-education clips for
+        Reels, Shorts, and TikTok. Two clear tiers: polish your clinician-on-camera footage, or add
+        advanced 2D/3D elements from prebuilt assets. Default delivery is 9:16 at 1080×1920.
       </p>
 
-      <div class="mt-14 grid gap-10 md:grid-cols-2">
-        <article class="border-t border-ink/10 pt-6">
-          <h3 class="font-display text-xl font-semibold text-ink">Animated explainers</h3>
+      <div class="mt-12 grid gap-8 border-t border-ink/10 pt-10 md:grid-cols-2">
+        <div>
+          <h3 class="font-display text-xl font-semibold text-ink">Essential</h3>
           <p class="mt-3 text-sm leading-relaxed text-muted">
-            AE-led motion: anatomy callouts, process steps, clean medical visuals without putting
-            patients on camera.
+            Clinician-on-camera polish — clean pacing, dynamic subtitles, audio tuning, and curated
+            clinical stock B-roll.
           </p>
-        </article>
-        <article class="border-t border-ink/10 pt-6">
-          <h3 class="font-display text-xl font-semibold text-ink">Clinician-on-camera</h3>
+        </div>
+        <div>
+          <h3 class="font-display text-xl font-semibold text-ink">Advanced</h3>
           <p class="mt-3 text-sm leading-relaxed text-muted">
-            You talk; we polish — captions, pacing, light graphics and overlays so education still
-            scrolls.
+            Advanced edit with motion graphics and anatomical inserts from prebuilt assets — not
+            custom Cinema 4D builds from scratch.
           </p>
-        </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- How it works -->
-  <section class="bg-mist">
+  <!-- Pricing tiers -->
+  <section class="bg-mist" id="pricing">
+    <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-signal">Pricing</p>
+      <h2 class="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+        Two tiers. Clear scope. Start with one video.
+      </h2>
+      <p class="mt-4 max-w-2xl text-muted leading-relaxed">
+        Orders of 5+ videos get 10% off. Monthly retainers — including a mix of Essential and
+        Advanced — are by email. No refunds once production starts; try one video first.
+      </p>
+
+      <div class="mt-14 grid gap-6 lg:grid-cols-2">
+        <article class="flex flex-col border border-ink/10 bg-paper p-6 md:p-8">
+          <a
+            href="/?tier=essential#start"
+            class="inline-flex w-fit rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper no-underline transition hover:bg-ink-soft"
+          >
+            Start Essential
+          </a>
+          <p class="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-muted">Essential</p>
+          <p class="mt-3 font-display text-4xl font-semibold tracking-tight text-ink">$67</p>
+          <p class="mt-1 text-sm text-muted">per video</p>
+          <p class="mt-5 text-sm leading-relaxed text-ink-soft">
+            Clinician-on-camera polish: pacing, subtitles, audio, curated clinical B-roll. You
+            provide brief, script or voiceover, and footage.
+          </p>
+          <ul class="mt-6 space-y-2 text-sm text-ink-soft">
+            <li>9:16 · 1080×1920</li>
+            <li>Up to 3 first drafts / week</li>
+            <li>Two revision rounds</li>
+            <li>Optional script add-on · $30</li>
+          </ul>
+          <a
+            href="/?tier=essential#start"
+            class="mt-8 inline-flex justify-center rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper no-underline transition hover:bg-ink-soft"
+          >
+            Start Essential
+          </a>
+        </article>
+
+        <article class="flex flex-col border-2 border-signal bg-paper p-6 md:p-8">
+          <a
+            href="/?tier=advanced#start"
+            class="inline-flex w-fit rounded-full bg-signal px-5 py-2.5 text-sm font-semibold text-ink no-underline transition hover:bg-signal-bright"
+          >
+            Start Advanced
+          </a>
+          <p class="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-signal">Advanced</p>
+          <p class="mt-3 font-display text-4xl font-semibold tracking-tight text-ink">$199</p>
+          <p class="mt-1 text-sm text-muted">per video</p>
+          <p class="mt-5 text-sm leading-relaxed text-ink-soft">
+            Advanced edit with 2D/3D elements from prebuilt assets — motion graphics, anatomical
+            inserts, MoA-style overlays. Not custom C4D from scratch.
+          </p>
+          <ul class="mt-6 space-y-2 text-sm text-ink-soft">
+            <li>9:16 · 1080×1920</li>
+            <li>Up to 2 first drafts / week</li>
+            <li>Two revision rounds</li>
+            <li>Optional script add-on · $50</li>
+          </ul>
+          <a
+            href="/?tier=advanced#start"
+            class="mt-8 inline-flex justify-center rounded-full bg-signal px-5 py-2.5 text-sm font-semibold text-ink no-underline transition hover:bg-signal-bright"
+          >
+            Start Advanced
+          </a>
+        </article>
+      </div>
+
+      <p class="mt-8 text-sm leading-relaxed text-muted">
+        Script add-on is a short-form VO script for the video. Need a monthly block or a mix of
+        tiers?
+        <a href="/?tier=monthly#start" class="font-medium text-signal no-underline hover:text-ink">
+          Contact us for retainers
+        </a>
+        .
+      </p>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="bg-paper" id="process">
     <div class="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
       <p class="text-xs font-semibold uppercase tracking-[0.18em] text-signal">How it works</p>
-      <h2 class="mt-3 max-w-xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
-        Simple pipeline. Email-led. No babysitting your feed.
+      <h2 class="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+        From inquiry to ready-to-post — email-led.
       </h2>
-      <ol class="mt-12 grid gap-8 md:grid-cols-3">
-        <li class="relative">
+      <p class="mt-4 max-w-2xl text-muted leading-relaxed">
+        No site uploads. You tell us what you want; we align by email, invoice via Payoneer, then
+        produce.
+      </p>
+
+      <ol class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <li>
           <span class="font-display text-4xl font-semibold text-signal/40">01</span>
-          <h3 class="mt-2 font-semibold text-ink">Brief by email</h3>
+          <h3 class="mt-2 font-semibold text-ink">Inquire</h3>
           <p class="mt-2 text-sm leading-relaxed text-muted">
-            Topics, assets, and brand basics. We stay async so clinic days stay clinic days.
+            Use Start below — briefly what you want and what you’ll provide.
           </p>
         </li>
         <li>
           <span class="font-display text-4xl font-semibold text-signal/40">02</span>
-          <h3 class="mt-2 font-semibold text-ink">We produce</h3>
+          <h3 class="mt-2 font-semibold text-ink">Send assets by email</h3>
           <p class="mt-2 text-sm leading-relaxed text-muted">
-            Templated systems for speed, clinical clarity for trust. Two revision rounds per video.
+            We reply within 48 hours. You send brief, links, and attachments in the thread.
           </p>
         </li>
         <li>
           <span class="font-display text-4xl font-semibold text-signal/40">03</span>
-          <h3 class="mt-2 font-semibold text-ink">You post</h3>
+          <h3 class="mt-2 font-semibold text-ink">Align &amp; pay</h3>
           <p class="mt-2 text-sm leading-relaxed text-muted">
-            Ready-to-post files land with you (or your VA). We make the videos — you own the channel.
+            Lock scope in writing, then Payoneer invoice. Clock starts when paid, brief approved,
+            and assets are in.
+          </p>
+        </li>
+        <li>
+          <span class="font-display text-4xl font-semibold text-signal/40">04</span>
+          <h3 class="mt-2 font-semibold text-ink">First drafts</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">
+            Essential: up to 3 / week. Advanced: up to 2 / week. Reviewed via Drive link.
+          </p>
+        </li>
+        <li>
+          <span class="font-display text-4xl font-semibold text-signal/40">05</span>
+          <h3 class="mt-2 font-semibold text-ink">Revisions</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">
+            Two rounds included. Your review time sits outside the turnaround window.
+          </p>
+        </li>
+        <li>
+          <span class="font-display text-4xl font-semibold text-signal/40">06</span>
+          <h3 class="mt-2 font-semibold text-ink">Finals</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">
+            Ready-to-post files. You publish — we stay on the videos.
           </p>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="bg-ink-soft text-paper">
-    <div class="mx-auto flex max-w-6xl flex-col items-start gap-6 px-5 py-20 md:flex-row md:items-center md:justify-between md:px-8 md:py-24">
-      <div class="max-w-xl">
-        <h2 class="font-display text-3xl font-semibold tracking-tight md:text-4xl">
-          Start with one video — or a monthly block.
+  <!-- FAQ -->
+  <section class="bg-mist" id="faq">
+    <div class="mx-auto max-w-3xl px-5 py-20 md:px-8 md:py-28">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-signal">FAQ</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+        Details that usually come up.
+      </h2>
+
+      <div class="mt-12 space-y-0 divide-y divide-ink/10 border-y border-ink/10">
+        <details class="group py-5">
+          <summary class="cursor-pointer list-none font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+            <span class="flex items-center justify-between gap-4">
+              Turnaround
+              <span class="text-signal transition group-open:rotate-45">+</span>
+            </span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-muted">
+            First drafts only: Essential up to 3 per week, Advanced up to 2 per week, once payment,
+            approved brief, and assets are all in. Example: 5 Essential → 3 in week one, 2 in week
+            two. This isn’t a same-day rush shop — most practices plan content weeks ahead.
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="cursor-pointer list-none font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+            <span class="flex items-center justify-between gap-4">
+              Revisions
+              <span class="text-signal transition group-open:rotate-45">+</span>
+            </span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-muted">
+            Two revision rounds per video are included. Client review time is outside the
+            turnaround clock — if feedback takes a few days, that doesn’t eat the draft window.
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="cursor-pointer list-none font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+            <span class="flex items-center justify-between gap-4">
+              Refunds
+              <span class="text-signal transition group-open:rotate-45">+</span>
+            </span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-muted">
+            No refunds once an order is paid and in production. Start with one video; if you’re
+            happy, move to bulk or monthly.
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="cursor-pointer list-none font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+            <span class="flex items-center justify-between gap-4">
+              Bulk &amp; monthly
+              <span class="text-signal transition group-open:rotate-45">+</span>
+            </span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-muted">
+            Orders of 5 or more videos get 10% off. For monthly retainers — including a mix of
+            Essential and Advanced — contact us and we’ll scope a block that fits your calendar.
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="cursor-pointer list-none font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+            <span class="flex items-center justify-between gap-4">
+              What you provide
+              <span class="text-signal transition group-open:rotate-45">+</span>
+            </span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-muted">
+            Brief, script or voiceover, and footage (unless you take the script add-on). We don’t
+            take uploads on the site — send files and links by email after we reply.
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="cursor-pointer list-none font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+            <span class="flex items-center justify-between gap-4">
+              Communication
+              <span class="text-signal transition group-open:rotate-45">+</span>
+            </span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-muted">
+            Email is the main channel. We reply within 48 hours. Phone and video calls aren’t the
+            default.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start / contact -->
+  <section class="bg-paper" id="start">
+    <div class="mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1fr_1.1fr] md:px-8 md:py-28">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-signal">Start</p>
+        <h2 class="mt-3 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+          Tell us what you want.
         </h2>
-        <p class="mt-4 text-sm leading-relaxed text-fog/75 md:text-base">
-          Build the mix that fits your practice. Prepaid via invoice. Cancel future months anytime
-          before the next billing date.
+        <p class="mt-5 max-w-md text-muted leading-relaxed">
+          Short note is enough — tier, roughly how many videos, and what you’ll provide. We’ll reply
+          within 48 hours from
+          <a href="mailto:hello@vidmedical.com" class="font-medium text-signal no-underline hover:text-ink">
+            hello@vidmedical.com
+          </a>
+          and collect the full brief by email.
         </p>
       </div>
-      <a
-        href="/contact"
-        class="inline-flex shrink-0 rounded-full bg-signal px-6 py-3 text-sm font-semibold text-ink no-underline transition hover:bg-signal-bright"
+
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="border border-ink/10 bg-mist p-6 md:p-8"
       >
-        Get started
-      </a>
+        <input type="hidden" name="access_key" value="685d2384-6522-49e4-aa53-a06b709865d2" />
+        <input type="hidden" name="subject" value="VidMedical — new inquiry" />
+        <input type="hidden" name="from_name" value="VidMedical Studio" />
+        <input type="hidden" name="redirect" value="https://vidmedical.com/thanks" />
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+
+        <label class="block text-sm font-medium text-ink">
+          Name
+          <input
+            required
+            type="text"
+            name="name"
+            class="mt-2 w-full border border-ink/15 bg-paper px-3 py-2.5 text-sm text-ink outline-none focus:border-signal"
+          />
+        </label>
+
+        <label class="mt-5 block text-sm font-medium text-ink">
+          Email
+          <input
+            required
+            type="email"
+            name="email"
+            class="mt-2 w-full border border-ink/15 bg-paper px-3 py-2.5 text-sm text-ink outline-none focus:border-signal"
+          />
+        </label>
+
+        <label class="mt-5 block text-sm font-medium text-ink">
+          Practice / role
+          <input
+            type="text"
+            name="practice"
+            placeholder="e.g. physio clinic, dental practice, coach"
+            class="mt-2 w-full border border-ink/15 bg-paper px-3 py-2.5 text-sm text-ink outline-none focus:border-signal"
+          />
+        </label>
+
+        <label class="mt-5 block text-sm font-medium text-ink">
+          Interest
+          <select
+            id="interest"
+            name="interest"
+            class="mt-2 w-full border border-ink/15 bg-paper px-3 py-2.5 text-sm text-ink outline-none focus:border-signal"
+          >
+            <option value="" disabled selected={!tierValue}>Select…</option>
+            <option value="Essential" selected={tierValue === 'Essential'}>Essential</option>
+            <option value="Advanced" selected={tierValue === 'Advanced'}>Advanced</option>
+            <option value="Monthly retainer" selected={tierValue === 'Monthly retainer'}>
+              Monthly retainer
+            </option>
+            <option value="Custom / not sure">Custom / not sure</option>
+          </select>
+        </label>
+
+        <label class="mt-5 block text-sm font-medium text-ink">
+          What you want &amp; what you’ll provide
+          <textarea
+            required
+            name="message"
+            rows="5"
+            placeholder="e.g. 2 Essential videos; I’ll send phone footage + a rough outline…"
+            class="mt-2 w-full resize-y border border-ink/15 bg-paper px-3 py-2.5 text-sm text-ink outline-none focus:border-signal"
+          >{tierValue ? `Interested in: ${tierValue}\n\n` : ''}</textarea>
+        </label>
+
+        <button
+          type="submit"
+          class="mt-7 w-full rounded-full bg-signal px-5 py-3 text-sm font-semibold text-ink transition hover:bg-signal-bright"
+        >
+          Send inquiry
+        </button>
+        <p class="mt-3 text-xs leading-relaxed text-muted">
+          We reply by email within 48 hours. No spam lists. Full assets come in the email thread —
+          not on this form.
+        </p>
+      </form>
     </div>
   </section>
 </Layout>

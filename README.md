@@ -35,14 +35,15 @@ npm run preview
 
 | Path | Purpose |
 | --- | --- |
-| `/` | Brand homepage |
-| `/packages` | Single / Core (4) / Growth (8) anchors — interactive builder next |
+| `/` | Main sales lander — offer, Essential/Advanced pricing, process, FAQ, start form |
+| `/packages` | Redirects to `/#pricing` |
 | `/about` | Studio brand (no personal founder page) |
-| `/contact` | Email intake via Web3Forms |
+| `/contact` | Redirects to `/#start` |
 | `/thanks` | Post-submit confirmation |
 
 ## Notes
 
-- Payments: Payoneer invoice / payment link (not Stripe on launch).
-- Retainers: prepaid month, non-refundable; cancel stops next cycle.
-- Product: videos only for v1 (client or their VA posts).
+- Pricing: Essential $67 · Advanced $199 · script add-ons $30 / $50 · 10% off 5+ videos.
+- Payments: Payoneer invoice after scope lock (not Stripe on launch).
+- No refunds once in production; start with one video.
+- Product: ready-to-post 9:16 videos (client or their VA posts).
