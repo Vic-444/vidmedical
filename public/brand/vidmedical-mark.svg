@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="VidMedical Studio">
+  <!-- Rounded tile -->
+  <rect x="32" y="32" width="448" height="448" rx="96" fill="#fbfcfc"/>
+  <!-- Soft edge for light-on-light contexts -->
+  <rect x="32" y="32" width="448" height="448" rx="96" fill="none" stroke="#e8eef1" stroke-width="8"/>
+
+  <!-- Play triangle (video) -->
+  <path
+    d="M198 156
+       C198 148 206 142 214 146
+       L366 236
+       C373 240 373 252 366 256
+       L214 346
+       C206 350 198 344 198 336
+       Z"
+    fill="#1f8a7a"
+  />
+
+  <!-- ECG / pulse line — also reads as M + V -->
+  <path
+    d="M78 256
+       H168
+       L196 256
+       L228 168
+       L268 344
+       L308 208
+       L336 256
+       H434"
+    fill="none"
+    stroke="#0c1419"
+    stroke-width="22"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
