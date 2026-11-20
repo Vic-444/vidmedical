@@ -1,32 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="VidMedical Studio">
-  <!-- Teal rounded tile — strong social avatar -->
-  <rect x="0" y="0" width="512" height="512" rx="112" fill="#1f8a7a"/>
-
-  <!-- Play triangle in paper white -->
+  <rect width="512" height="512" rx="112" fill="#249fa1"/>
   <path
-    d="M178 156
-       C178 148 186 142 194 146
-       L346 236
-       C353 240 353 252 346 256
-       L194 346
-       C186 350 178 344 178 336
+    d="M132 118
+       C132 108 142 102 152 107
+       L430 248
+       C438 252 438 264 430 268
+       L152 409
+       C142 414 132 408 132 398
        Z"
-    fill="#fbfcfc"
+    fill="#ffffff"
   />
-
-  <!-- ECG / pulse line in ink — reads as M + V -->
   <path
-    d="M64 256
-       H154
-       L182 256
-       L214 168
-       L254 344
-       L294 208
-       L322 256
-       H448"
+    d="M70 265
+       H155
+       L194 216
+       L242 351
+       L300 142
+       L348 265
+       H440"
     fill="none"
-    stroke="#0c1419"
-    stroke-width="22"
+    stroke="#0e1f3b"
+    stroke-width="18"
     stroke-linecap="round"
     stroke-linejoin="round"
   />

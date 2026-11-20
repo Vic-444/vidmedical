@@ -1,32 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="VidMedical Studio">
-  <!-- Ink tile for dark UI / dark mode -->
-  <rect x="32" y="32" width="448" height="448" rx="96" fill="#0c1419"/>
-
-  <!-- Play triangle -->
+  <rect width="512" height="512" rx="112" fill="#0c1419"/>
   <path
-    d="M198 156
-       C198 148 206 142 214 146
-       L366 236
-       C373 240 373 252 366 256
-       L214 346
-       C206 350 198 344 198 336
+    d="M132 118
+       C132 108 142 102 152 107
+       L430 248
+       C438 252 438 264 430 268
+       L152 409
+       C142 414 132 408 132 398
        Z"
-    fill="#2eb8a4"
+    fill="#249fa1"
   />
-
-  <!-- ECG line in paper -->
   <path
-    d="M78 256
-       H168
-       L196 256
-       L228 168
-       L268 344
-       L308 208
-       L336 256
-       H434"
+    d="M70 265
+       H155
+       L194 216
+       L242 351
+       L300 142
+       L348 265
+       H440"
     fill="none"
-    stroke="#fbfcfc"
-    stroke-width="22"
+    stroke="#ffffff"
+    stroke-width="18"
     stroke-linecap="round"
     stroke-linejoin="round"
   />
