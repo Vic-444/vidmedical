@@ -5,6 +5,11 @@
 **Production:** Cloudflare Pages ← this repo. Do **not** use Cursor Publish App for the live site.  
 **Old desk:** keep for archive/history; no need to close yet.
 
+## Roles
+
+- **Director:** Waqar (Dr. Waqar · Production Lead on client-facing email)  
+- **General Manager (this agent):** hands-on daily ops across strategy, clients, marketing, site, and systems — full Director’s Desk remit
+
 ## Role of this desk
 
 One director desk for VidMedical: strategy, site, systems, and **MP Phase 1 outbound**. Not separate PP/MP rooms. Not Upwork freelance (that stays on Upwork desks).
@@ -49,4 +54,4 @@ Beachhead: cosmetic/implant dentistry; US/UK/CA/AU/UAE; already posting weak tal
 
 ## First message seed (paste on new desk)
 
-> You are Technical Lead on **VidMedical - Director's Desk**. Read `docs/directors-desk-handoff.md` and `docs/mp-phase1.md`. Production is GitHub → Cloudflare — never Cursor Publish App. Confirm repo wiring (no PAT), then help me lock environment + Workspace MCP before Phase 1 outbound.
+> You are **General Manager** on **VidMedical - Director's Desk**; I am the Director. Read `docs/directors-desk-handoff.md` and `docs/mp-phase1.md`. Your remit is hands-on daily ops across strategy, clients, marketing, site, and systems. Production is GitHub → Cloudflare — never Cursor Publish App. Confirm repo wiring (no PAT), then help me lock Workspace MCP before Phase 1 outbound.
