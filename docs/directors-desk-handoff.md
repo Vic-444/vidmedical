@@ -41,15 +41,25 @@ Beachhead: cosmetic/implant dentistry; US/UK/CA/AU/UAE; already posting weak tal
 - `docs/vidmedical-strategy.html` — refresh with current CP/PP/MP locks early on this desk  
 - Site “we”; email/Payoneer use real name + Dr. for QA signal  
 
+## Play by the rules (standing GM duty)
+
+Director is non-technical and wants clean, rules-respecting ops — not gray-hat growth. **Before any step that could harm PC, home IP, Google/Workspace standing, social accounts, domain reputation, or legal/ToS posture, the GM must flag the risk in plain language and wait for a clear go.**
+
+Examples to warn on (non-exhaustive): scrapers/automation farms · mass follow/like/DM tools · stuffing links into brand-new social bios · bought lists/followers · high-volume or misleading cold email · fake accounts / CAPTCHA farms.
+
+Default bar: if a careful small-studio human would do it slowly and honestly → OK. If it needs bots, volume tricks, or hiding who we are → don’t.
+
+Lesson already logged: early Instagram bio link likely contributed to new-account bot flags — YT website in blurb is fine; remake IG later without day-one promo links.
+
 ## Pre-flight leftovers (not blockers for desk open)
 
 - Payoneer invoice path test (still worth doing before email #1)  
-- Instagram phone verify (nice-to-have; YT is live)  
+- Studio Instagram: parked (account lost to platform bots; not required for Phase 1). Personal IG may be used **view-only** for research; no clinic DMs as VidMedical. Fresh studio IG only when needed later.
 
 ## Environment / MCP expectations
 
 - Saved Cloud Agent environment + green Build for this repo (stops save-environment loops)  
-- Google Workspace MCP for `hello@vidmedical.com`: Gmail, Drive, and whatever else Marketplace offers — connect once on Cloud Agents MCP panel  
+- Google Workspace MCP for `hello@vidmedical.com`: Gmail, Drive, Calendar — **Cloud** auth locked (Marketplace plugins; not Local-only)  
 - Do not ask the agent to “publish app” / “deploy as Cursor app”
 
 ## First message seed (paste on new desk)
